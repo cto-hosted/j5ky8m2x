@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create custom music disc resource packs with your own songs." />
+  <title>Music Disc Maker — MCTools</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/tools.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">MC<span>Tools</span></a>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li>
+          <a href="#">Skins</a>
+          <ul class="dropdown-menu">
+            <li><a href="skin-editor.html">Skin Editor</a></li>
+            <li><a href="avatar-maker.html">Avatar Maker</a></li>
+            <li><a href="skin-pack-maker.html">Skin Pack Maker</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Custom Packs</a>
+          <ul class="dropdown-menu">
+            <li><a href="custom-paintings.html">Custom Paintings</a></li>
+            <li><a href="music-disc-maker.html">Music Disc Maker</a></li>
+            <li><a href="armor-stand-skins.html">Armor Stand Skins</a></li>
+            <li><a href="totem-generator.html">Totem Generator</a></li>
+            <li><a href="hud-customizer.html">HUD Customizer</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Capes</a>
+          <ul class="dropdown-menu">
+            <li><a href="cape-pack-builder.html">Cape Pack Builder</a></li>
+            <li><a href="cape-editor.html">Cape Editor</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">More</a>
+          <ul class="dropdown-menu">
+            <li><a href="texture-pack-merger.html">Texture Pack Merger</a></li>
+            <li><a href="pack-converter.html">Pack Converter</a></li>
+            <li><a href="coordinate-calculator.html">Coordinate Calculator</a></li>
+          </ul>
+        </li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="tool-page">
+    <div class="tool-header">
+      <a class="back-link" href="../index.html">← Back</a>
+      <h1 class="tool-title">Music Disc Maker</h1>
+    </div>
+
+    <div class="tool-layout two-col">
+      <div class="mc-panel" style="padding:1.25rem">
+        <div class="drop-zone" id="drop-zone">
+          <input type="file" id="file-input" accept="audio/*" />
+          <p class="drop-zone-text">Drop an audio file or click to upload</p>
+        </div>
+        <div class="tool-form" style="margin-top:1rem">
+          <div class="form-row">
+            <label>Target Disc</label>
+            <select id="disc">
+              <option value="13">13</option>
+              <option value="cat">cat</option>
+              <option value="blocks">blocks</option>
+              <option value="chirp">chirp</option>
+              <option value="far">far</option>
+              <option value="mall">mall</option>
+              <option value="mellohi">mellohi</option>
+              <option value="stal">stal</option>
+              <option value="strad">strad</option>
+              <option value="ward">ward</option>
+              <option value="11">11</option>
+              <option value="wait">wait</option>
+              <option value="otherside">otherside</option>
+              <option value="5">5</option>
+              <option value="pigstep">pigstep</option>
+              <option value="relic">relic</option>
+              <option value="creator">creator</option>
+              <option value="creator_music_box">creator_music_box</option>
+              <option value="precipice">precipice</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>Edition</label>
+            <select id="edition">
+              <option value="java">Java Edition</option>
+              <option value="bedrock">Bedrock Edition</option>
+            </select>
+          </div>
+        </div>
+        <div class="toolbar" style="margin-top:1rem">
+          <button class="mc-btn" id="convert">Convert & Generate Pack</button>
+          <button class="mc-btn secondary" id="preview-btn" disabled>Play Preview</button>
+        </div>
+        <div id="status" style="margin-top:0.75rem;font-size:0.8rem;color:var(--text-dim)"></div>
+      </div>
+
+      <div class="preview-panel">
+        <h3>Conversion Log</h3>
+        <div class="log-panel" id="log">Waiting for upload…</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span style="font-size:0.75rem;color:var(--text-dim)">© MCTools</span>
+      <ul class="footer-links">
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../privacy.html">Privacy</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../gallery.html">Gallery</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/shared.js"></script>
+  <script type="module" src="music-disc-maker.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Turn images into Minecraft painting resource packs." />
+  <title>Custom Paintings — MCTools</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/tools.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">MC<span>Tools</span></a>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li>
+          <a href="#">Skins</a>
+          <ul class="dropdown-menu">
+            <li><a href="skin-editor.html">Skin Editor</a></li>
+            <li><a href="avatar-maker.html">Avatar Maker</a></li>
+            <li><a href="skin-pack-maker.html">Skin Pack Maker</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Custom Packs</a>
+          <ul class="dropdown-menu">
+            <li><a href="custom-paintings.html">Custom Paintings</a></li>
+            <li><a href="music-disc-maker.html">Music Disc Maker</a></li>
+            <li><a href="armor-stand-skins.html">Armor Stand Skins</a></li>
+            <li><a href="totem-generator.html">Totem Generator</a></li>
+            <li><a href="hud-customizer.html">HUD Customizer</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Capes</a>
+          <ul class="dropdown-menu">
+            <li><a href="cape-pack-builder.html">Cape Pack Builder</a></li>
+            <li><a href="cape-editor.html">Cape Editor</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">More</a>
+          <ul class="dropdown-menu">
+            <li><a href="texture-pack-merger.html">Texture Pack Merger</a></li>
+            <li><a href="pack-converter.html">Pack Converter</a></li>
+            <li><a href="coordinate-calculator.html">Coordinate Calculator</a></li>
+          </ul>
+        </li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="tool-page">
+    <div class="tool-header">
+      <a class="back-link" href="../index.html">← Back</a>
+      <h1 class="tool-title">Custom Paintings</h1>
+    </div>
+
+    <div class="tool-layout two-col">
+      <div class="mc-panel" style="padding:1.25rem">
+        <div class="tool-form">
+          <div class="form-row">
+            <label>Painting to Replace</label>
+            <select id="painting">
+              <option value="kebab" data-w="16" data-h="16">Kebab (16×16)</option>
+              <option value="aztec" data-w="16" data-h="16">Aztec (16×16)</option>
+              <option value="alban" data-w="16" data-h="16">Alban (16×16)</option>
+              <option value="aztec2" data-w="16" data-h="16">Aztec2 (16×16)</option>
+              <option value="bomb" data-w="16" data-h="16">Bomb (16×16)</option>
+              <option value="plant" data-w="16" data-h="16">Plant (16×16)</option>
+              <option value="wasteland" data-w="16" data-h="16">Wasteland (16×16)</option>
+              <option value="pool" data-w="32" data-h="16">Pool (32×16)</option>
+              <option value="courbet" data-w="32" data-h="16">Courbet (32×16)</option>
+              <option value="sea" data-w="32" data-h="16">Sea (32×16)</option>
+              <option value="sunset" data-w="32" data-h="16">Sunset (32×16)</option>
+              <option value="creebet" data-w="32" data-h="16">Creebet (32×16)</option>
+              <option value="wanderer" data-w="16" data-h="32">Wanderer (16×32)</option>
+              <option value="graham" data-w="16" data-h="32">Graham (16×32)</option>
+              <option value="match" data-w="32" data-h="32">Match (32×32)</option>
+              <option value="bust" data-w="32" data-h="32">Bust (32×32)</option>
+              <option value="stage" data-w="32" data-h="32">Stage (32×32)</option>
+              <option value="void" data-w="32" data-h="32">Void (32×32)</option>
+              <option value="skull_and_roses" data-w="32" data-h="32">Skull and Roses (32×32)</option>
+              <option value="wither" data-w="32" data-h="32">Wither (32×32)</option>
+              <option value="fighters" data-w="64" data-h="32">Fighters (64×32)</option>
+              <option value="pointer" data-w="64" data-h="64">Pointer (64×64)</option>
+              <option value="pigscene" data-w="64" data-h="64">Pigscene (64×64)</option>
+              <option value="burning_skull" data-w="64" data-h="64">Burning Skull (64×64)</option>
+              <option value="skeleton" data-w="64" data-h="48">Skeleton (64×48)</option>
+              <option value="donkey_kong" data-w="64" data-h="48">Donkey Kong (64×48)</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>Edition</label>
+            <select id="edition">
+              <option value="java">Java Edition</option>
+              <option value="bedrock">Bedrock Edition</option>
+            </select>
+          </div>
+        </div>
+        <div class="drop-zone" id="drop-zone" style="margin-top:1rem">
+          <input type="file" id="file-input" accept="image/*" />
+          <p class="drop-zone-text">Drop an image or click to upload</p>
+        </div>
+        <div class="toolbar" style="margin-top:1rem">
+          <button class="mc-btn" id="generate">Generate Pack</button>
+        </div>
+        <p style="font-size:0.75rem;color:var(--text-dim);margin-top:0.5rem">Images are resized to the painting's dimensions using nearest-neighbor scaling.</p>
+      </div>
+
+      <div class="preview-panel">
+        <h3>Preview</h3>
+        <div class="canvas-wrap">
+          <canvas id="preview"></canvas>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span style="font-size:0.75rem;color:var(--text-dim)">© MCTools</span>
+      <ul class="footer-links">
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../privacy.html">Privacy</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../gallery.html">Gallery</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/shared.js"></script>
+  <script type="module" src="custom-paintings.js"></script>
+</body>
+</html>

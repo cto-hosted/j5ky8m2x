@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Convert Overworld and Nether coordinates instantly." />
+  <title>Coordinate Calculator — MCTools</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/tools.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">MC<span>Tools</span></a>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li>
+          <a href="#">Skins</a>
+          <ul class="dropdown-menu">
+            <li><a href="skin-editor.html">Skin Editor</a></li>
+            <li><a href="avatar-maker.html">Avatar Maker</a></li>
+            <li><a href="skin-pack-maker.html">Skin Pack Maker</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Custom Packs</a>
+          <ul class="dropdown-menu">
+            <li><a href="custom-paintings.html">Custom Paintings</a></li>
+            <li><a href="music-disc-maker.html">Music Disc Maker</a></li>
+            <li><a href="armor-stand-skins.html">Armor Stand Skins</a></li>
+            <li><a href="totem-generator.html">Totem Generator</a></li>
+            <li><a href="hud-customizer.html">HUD Customizer</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Capes</a>
+          <ul class="dropdown-menu">
+            <li><a href="cape-pack-builder.html">Cape Pack Builder</a></li>
+            <li><a href="cape-editor.html">Cape Editor</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">More</a>
+          <ul class="dropdown-menu">
+            <li><a href="texture-pack-merger.html">Texture Pack Merger</a></li>
+            <li><a href="pack-converter.html">Pack Converter</a></li>
+            <li><a href="coordinate-calculator.html">Coordinate Calculator</a></li>
+          </ul>
+        </li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="tool-page">
+    <div class="tool-header">
+      <a class="back-link" href="../index.html">← Back</a>
+      <h1 class="tool-title">Coordinate Calculator</h1>
+    </div>
+
+    <div class="tool-layout two-col">
+      <div class="mc-panel" style="padding:1.25rem">
+        <h3 style="font-family:var(--font-pixel);font-size:0.65rem;color:var(--accent-green-light);margin-top:0">Overworld → Nether</h3>
+        <div class="tool-form">
+          <div class="form-row">
+            <label>X</label>
+            <input type="number" id="ow-x" placeholder="0" />
+          </div>
+          <div class="form-row">
+            <label>Z</label>
+            <input type="number" id="ow-z" placeholder="0" />
+          </div>
+          <div class="form-row">
+            <label>Y (optional)</label>
+            <input type="number" id="ow-y" placeholder="64" />
+          </div>
+          <button class="mc-btn" id="btn-to-nether">Calculate Nether</button>
+          <div class="mc-panel" style="padding:0.75rem;margin-top:0.5rem">
+            <code id="result-nether" style="font-size:0.85rem;color:var(--text)">Enter coordinates…</code>
+            <button class="mc-btn secondary" id="copy-nether" style="margin-top:0.5rem">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mc-panel" style="padding:1.25rem">
+        <h3 style="font-family:var(--font-pixel);font-size:0.65rem;color:var(--accent-green-light);margin-top:0">Nether → Overworld</h3>
+        <div class="tool-form">
+          <div class="form-row">
+            <label>X</label>
+            <input type="number" id="ne-x" placeholder="0" />
+          </div>
+          <div class="form-row">
+            <label>Z</label>
+            <input type="number" id="ne-z" placeholder="0" />
+          </div>
+          <div class="form-row">
+            <label>Y (optional)</label>
+            <input type="number" id="ne-y" placeholder="64" />
+          </div>
+          <button class="mc-btn" id="btn-to-overworld">Calculate Overworld</button>
+          <div class="mc-panel" style="padding:0.75rem;margin-top:0.5rem">
+            <code id="result-overworld" style="font-size:0.85rem;color:var(--text)">Enter coordinates…</code>
+            <button class="mc-btn secondary" id="copy-overworld" style="margin-top:0.5rem">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mc-panel" style="padding:1.25rem;margin-top:1.5rem;text-align:center">
+      <p style="margin:0;font-size:0.85rem;color:var(--text-dim)">Overworld coords are divided by 8 for Nether. Nether coords are multiplied by 8 for Overworld.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span style="font-size:0.75rem;color:var(--text-dim)">© MCTools</span>
+      <ul class="footer-links">
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../privacy.html">Privacy</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../gallery.html">Gallery</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/shared.js"></script>
+  <script type="module" src="coordinate-calculator.js"></script>
+</body>
+</html>
