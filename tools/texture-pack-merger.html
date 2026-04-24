@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Texture Pack Merger — merge multiple packs into one.">
+<title>Texture Pack Merger — MCTools</title>
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/tools.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/">
+      <div class="logo-icon">M</div>
+      <span>MCTools</span>
+    </a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-menu">
+      <li>
+        <a class="dropdown-toggle" href="#">Skins</a>
+        <ul class="dropdown-menu">
+          <li><a href="skin-editor.html">Skin Editor</a></li>
+          <li><a href="avatar-maker.html">Avatar Maker</a></li>
+          <li><a href="skin-pack-maker.html">Skin Pack Maker</a></li>
+        </ul>
+      </li>
+      <li>
+        <a class="dropdown-toggle" href="#">Custom Packs</a>
+        <ul class="dropdown-menu">
+          <li><a href="custom-paintings.html">Custom Paintings</a></li>
+          <li><a href="music-disc-maker.html">Music Disc Maker</a></li>
+          <li><a href="armor-stand-skins.html">Armor Stand Skins</a></li>
+          <li><a href="totem-generator.html">Totem Generator</a></li>
+          <li><a href="hud-customizer.html">HUD Customizer</a></li>
+        </ul>
+      </li>
+      <li>
+        <a class="dropdown-toggle" href="#">Capes</a>
+        <ul class="dropdown-menu">
+          <li><a href="cape-pack-builder.html">Cape Pack Builder</a></li>
+          <li><a href="cape-editor.html">Cape Editor</a></li>
+        </ul>
+      </li>
+      <li>
+        <a class="dropdown-toggle" href="#">More</a>
+        <ul class="dropdown-menu">
+          <li><a href="texture-pack-merger.html">Texture Pack Merger</a></li>
+          <li><a href="pack-converter.html">Pack Converter</a></li>
+          <li><a href="coordinate-calculator.html">Coordinate Calculator</a></li>
+        </ul>
+      </li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="tool-page">
+  <div class="tool-header">
+    <a class="back-link" href="/">&larr; Back</a>
+    <h1>Texture Pack Merger</h1>
+  </div>
+
+  <div class="tool-panel">
+    <h2>Upload Packs</h2>
+    <div class="drop-zone" id="drop-zone">
+      <strong>Drop .zip / .mcpack files here</strong>
+      <span>or click to browse</span>
+      <input type="file" accept=".zip,.mcpack" multiple class="visually-hidden">
+    </div>
+
+    <div id="file-list-wrap" style="margin-top:1rem; display:none;">
+      <table class="mc-table">
+        <thead>
+          <tr><th>Path</th><th>Source</th><th>Conflict</th></tr>
+        </thead>
+        <tbody id="file-tbody"></tbody>
+      </table>
+    </div>
+
+    <div class="action-bar" style="margin-top:1rem;">
+      <button class="btn" id="btn-merge">Merge Packs</button>
+    </div>
+    <div class="output-log" id="log" style="margin-top:1rem;">Ready.</div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>
+    &copy; MCTools. Not affiliated with Mojang or Microsoft.
+    <a href="../about.html">About</a>
+    <a href="../privacy.html">Privacy</a>
+  </p>
+</footer>
+
+<script src="../js/shared.js"></script>
+<script type="module" src="texture-pack-merger.js"></script>
+</body>
+</html>

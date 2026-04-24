@@ -1,0 +1,509 @@
+/* ============================================
+   MCTools — Global Theme
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --bg: #0f0b1a;
+  --panel: #1e1b2e;
+  --panel-light: #2a2640;
+  --accent-green: #5D8C22;
+  --accent-green-hover: #6fa32a;
+  --accent-blue: #3b82f6;
+  --accent-red: #ef4444;
+  --text: #e2e2e2;
+  --text-muted: #9ca3af;
+  --border-light: #4a4460;
+  --border-dark: #1a1625;
+  --bevel-light: #4a4460;
+  --bevel-dark: #0f0b1a;
+  --shadow: rgba(0,0,0,0.5);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Pixel font utility */
+.pixel-font {
+  font-family: 'Press Start 2P', cursive;
+  line-height: 1.4;
+}
+
+/* Minecraft beveled panel */
+.mc-panel {
+  background: var(--panel);
+  border-style: solid;
+  border-width: 4px;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  box-shadow: 0 4px 0 var(--shadow);
+}
+
+.mc-panel-light {
+  background: var(--panel-light);
+  border-style: solid;
+  border-width: 4px;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 4px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  background: var(--accent-green);
+  color: #fff;
+  cursor: pointer;
+  transition: filter .15s;
+}
+
+.btn:hover {
+  filter: brightness(1.15);
+}
+
+.btn:active {
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+}
+
+.btn-secondary {
+  background: var(--panel-light);
+  color: var(--text);
+}
+
+.btn-blue {
+  background: var(--accent-blue);
+}
+
+.btn-red {
+  background: var(--accent-red);
+}
+
+/* Inputs */
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+  background: var(--bg);
+  color: var(--text);
+  border: 4px solid;
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  padding: 0.5rem 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent-green) var(--accent-green) var(--accent-green) var(--accent-green);
+}
+
+/* Links */
+a {
+  color: var(--accent-green);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   Navigation
+   ============================================ */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--panel);
+  border-bottom: 4px solid var(--border-dark);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: var(--text);
+  text-decoration: none;
+}
+.nav-brand:hover {
+  text-decoration: none;
+}
+
+.nav-brand .logo-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--accent-green);
+  border: 4px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  display: grid;
+  place-items: center;
+  font-size: 0.6rem;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu > li {
+  position: relative;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 0.6rem 0.9rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  color: var(--text);
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background: var(--panel-light);
+}
+
+/* Dropdown */
+.dropdown-toggle::after {
+  content: ' ▼';
+  font-size: 0.5rem;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: var(--panel);
+  border: 4px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0;
+  box-shadow: 0 8px 16px var(--shadow);
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.55rem;
+}
+
+.dropdown-menu li a:hover {
+  background: var(--panel-light);
+}
+
+.nav-menu > li:hover .dropdown-menu {
+  display: block;
+}
+
+/* Mobile hamburger */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: var(--text);
+  margin: 4px 0;
+}
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--panel);
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: 4px solid var(--border-dark);
+    padding: 0.5rem 0;
+  }
+  .nav-menu.open {
+    display: flex;
+  }
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-left: 4px solid var(--accent-green);
+  }
+  .nav-menu > li:hover .dropdown-menu {
+    display: none;
+  }
+  .nav-menu > li.open .dropdown-menu {
+    display: block;
+  }
+}
+
+/* ============================================
+   Hero
+   ============================================ */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+  background:
+    radial-gradient(ellipse at center, rgba(93,140,34,0.15) 0%, transparent 70%),
+    var(--bg);
+}
+
+.hero-logo {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.2rem;
+  color: var(--accent-green);
+  text-shadow: 4px 4px 0 var(--shadow);
+  margin: 0 0 1rem;
+}
+
+.hero-sub {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+/* ============================================
+   Sections
+   ============================================ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.85rem;
+  color: var(--text);
+  margin: 2rem 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-title::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-green);
+}
+
+/* ============================================
+   Cards
+   ============================================ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 4px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  padding: 1.25rem;
+  transition: transform .15s, box-shadow .15s;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 0 var(--shadow);
+  text-decoration: none;
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  background: var(--panel-light);
+  border: 4px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  display: grid;
+  place-items: center;
+}
+
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--accent-green);
+}
+
+.card-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.65rem;
+  margin: 0 0 0.5rem;
+}
+
+.card-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+  flex: 1;
+}
+
+.card-badge {
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.5rem;
+  background: var(--accent-red);
+  color: #fff;
+  margin-left: auto;
+}
+
+/* ============================================
+   Gallery
+   ============================================ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.gallery-item {
+  aspect-ratio: 16 / 10;
+  background: var(--panel-light);
+  border: 4px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+/* ============================================
+   Changelog
+   ============================================ */
+.changelog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.changelog-item {
+  background: var(--panel);
+  border: 4px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  padding: 1rem 1.25rem;
+}
+
+.changelog-version {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.65rem;
+  color: var(--accent-green);
+  margin: 0 0 0.25rem;
+}
+
+.changelog-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0 0 0.5rem;
+}
+
+.changelog-text {
+  font-size: 0.85rem;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.site-footer {
+  margin-top: auto;
+  background: var(--panel);
+  border-top: 4px solid var(--border-dark);
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.site-footer a {
+  color: var(--text-muted);
+  margin: 0 0.5rem;
+}
+
+/* ============================================
+   Utility
+   ============================================ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
