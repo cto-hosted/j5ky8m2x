@@ -9,7 +9,20 @@
   <link rel="stylesheet" href="../css/tools.css" />
 </head>
 <body>
-  <header class="site-header">
+    <div class="sky">
+    <div class="stars"></div>
+    <div class="cloud-scroll">
+      <div class="cstrip"><div class="c ca"></div><div class="c cb"></div><div class="c cc"></div><div class="c ca"></div><div class="c cb"></div><div class="c cc"></div></div>
+      <div class="cstrip"><div class="c cb"></div><div class="c cc"></div><div class="c ca"></div><div class="c cb"></div><div class="c cc"></div><div class="c ca"></div></div>
+      <div class="cstrip"><div class="c cc"></div><div class="c ca"></div><div class="c cb"></div><div class="c cc"></div><div class="c ca"></div><div class="c cb"></div></div>
+      <div class="cstrip"><div class="c ca"></div><div class="c cb"></div><div class="c cc"></div><div class="c ca"></div><div class="c cb"></div><div class="c cc"></div></div>
+      <div class="cstrip"><div class="c cb"></div><div class="c cc"></div><div class="c ca"></div><div class="c cb"></div><div class="c cc"></div><div class="c ca"></div></div>
+      <div class="cstrip"><div class="c cc"></div><div class="c ca"></div><div class="c cb"></div><div class="c cc"></div><div class="c ca"></div><div class="c cb"></div></div>
+    </div>
+  </div>
+
+  <div class="app">
+    <header class="site-header">
     <div class="nav-inner">
       <a href="../index.html" class="logo">MC<span>Tools</span></a>
       <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -55,7 +68,7 @@
   <main class="tool-page">
     <div class="tool-header">
       <a class="back-link" href="../index.html">← Back</a>
-      <h1 class="tool-title">Skin Editor</h1>
+      <h1 class="tool-title green">Skin Editor</h1>
     </div>
 
     <div class="tool-layout two-col">
@@ -71,10 +84,10 @@
           <button class="mc-btn secondary" id="redo">Redo</button>
         </div>
         <div style="margin-top:0.5rem;display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap">
-          <label style="font-size:0.75rem;color:var(--text-dim)">Zoom</label>
+          <label style="font-size:0.75rem;color:var(--text-mut)">Zoom</label>
           <input type="range" id="zoom" min="4" max="32" value="12" />
-          <label style="font-size:0.75rem;color:var(--text-dim)"><input type="checkbox" id="mirror" /> Mirror</label>
-          <label style="font-size:0.75rem;color:var(--text-dim)"><input type="checkbox" id="hat-only" /> Hat Only</label>
+          <label style="font-size:0.75rem;color:var(--text-mut)"><input type="checkbox" id="mirror" /> Mirror</label>
+          <label style="font-size:0.75rem;color:var(--text-mut)"><input type="checkbox" id="hat-only" /> Hat Only</label>
         </div>
         <div class="drop-zone" id="drop-zone" style="margin-top:1rem">
           <input type="file" id="file-input" accept="image/png" />
@@ -87,12 +100,12 @@
         <div class="canvas-wrap" style="margin-top:1rem">
           <canvas id="editor"></canvas>
         </div>
-        <p style="font-size:0.75rem;color:var(--text-dim);margin-top:0.5rem">Left click to draw. Right click to pick color.</p>
+        <p style="font-size:0.75rem;color:var(--text-mut);margin-top:0.5rem">Left click to draw. Right click to pick color.</p>
       </div>
 
       <div class="preview-panel">
         <h3>3D Preview</h3>
-        <div id="viewer-wrap" style="width:100%;height:400px;background:var(--panel);border:4px solid var(--border-light);display:flex;align-items:center;justify-content:center;color:var(--text-dim)">
+        <div id="viewer-wrap" style="width:100%;height:400px;background:rgba(0,0,0,0.68);border:2px solid var(--panel-hi);border-bottom-color:var(--panel-lo);border-right-color:var(--panel-lo);display:flex;align-items:center;justify-content:center;color:var(--text-mut)">
           Loading 3D viewer…
         </div>
       </div>
@@ -101,7 +114,7 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <span style="font-size:0.75rem;color:var(--text-dim)">© MCTools</span>
+      <span style="font-size:0.75rem;color:var(--text-mut)">© MCTools</span>
       <ul class="footer-links">
         <li><a href="../about.html">About</a></li>
         <li><a href="../privacy.html">Privacy</a></li>
@@ -113,5 +126,6 @@
 
   <script type="module" src="../js/shared.js"></script>
   <script type="module" src="skin-editor.js"></script>
+  </div>
 </body>
 </html>

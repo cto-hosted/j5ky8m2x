@@ -2,6 +2,26 @@
    MCTools - Shared Scripts
    ============================================ */
 
+// Generate stars if .stars container exists
+(function () {
+  const starsContainer = document.querySelector('.stars');
+  if (!starsContainer) return;
+
+  const count = 120;
+  const fragment = document.createDocumentFragment();
+
+  for (let i = 0; i < count; i++) {
+    const star = document.createElement('div');
+    star.className = 'star' + (Math.random() > 0.85 ? ' bright' : '');
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.opacity = (0.2 + Math.random() * 0.7).toFixed(2);
+    fragment.appendChild(star);
+  }
+
+  starsContainer.appendChild(fragment);
+})();
+
 // Mobile nav
 (function () {
   const hamburger = document.querySelector('.hamburger');
